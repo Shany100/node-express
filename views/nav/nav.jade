@@ -1,0 +1,5 @@
+div(class="container")  
+    ul(class="nav nav-pills")
+      each val, index in {"app/index":'首页', 'app/about':'关于我'}
+        li 
+          a(href="/" + index)= val

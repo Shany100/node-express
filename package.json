@@ -1,0 +1,20 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "test node.js server for me.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "jiangtao",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3",
+    "jade": "^1.9.2",
+    "lodash": "^3.7.0",
+    "strftime": "^0.8.2"
+  }
+}

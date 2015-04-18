@@ -1,0 +1,8 @@
+form(name="todoForm")
+    div(class="form-group")
+      label(for="titleIpt") 标题
+      input(id="titleIpt", class="form-control", name="title", type="text", placeholder="添加标题")
+    div(class="form-group")
+      label(for="contentIpt") 任务描述
+      textarea(id="contentIpt", rows="5" class="form-control", name="content", placeholder="添加任务描述")
+    button(type="button", id="addTodoBtn" class="btn btn-primary") 添加

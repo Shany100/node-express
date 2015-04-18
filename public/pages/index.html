@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>生成二维码</title>
+        
+        <link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+
+		<style>
+			#qrcode{ margin: 10px 0;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul class="nav nav-pills"><li> <a href="/app/index">首页</a></li><li> <a href="/app/about">关于我</a></li></ul>
+			<h1>
+				<!-- http://google.github.io/material-design-icons/ -->
+				<img src="/bower_components/material-design-icons/hardware/svg/design/ic_phone_android_24px.svg">
+				QR Code
+			</h1>
+			<form>
+				<div class="form-group">
+					<textarea class="form-control" rows="5" placeholder="输入URL"></textarea>
+				</div>
+				<button type="button" class="btn btn-primary btn-block" id="generateBtn">生成二维码</button>
+			</form>
+			<div id="qrcode"></div>
+		</div>
+		
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="../bower_components/jquery.qrcode/dist/jquery.qrcode.js"></script>
+		<script>
+			var t, interval;
+			
+			$("#generateBtn").click(function(){
+				var now = new Date().getTime();
+				
+				// 控制一定时间内，函数的执行次数。
+				if(t && (now - t) < 500){  // 500毫秒
+					console.log((now - t)+"不能执行" + now)
+					return false;
+				}
+				
+				t = new Date().getTime();
+				$("#qrcode").html("").qrcode({
+					render: 'image',
+					text: 'http://www.meizu.com'
+				});
+				
+			});
+		</script>
+	</body>
+</html>
