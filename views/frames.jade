@@ -1,0 +1,30 @@
+html
+  include ./head/head.jade
+  body
+    include ./nav/nav.jade
+    div(class="container")
+      table(class="table")
+        thead
+          tr
+            th 框架名称
+            th 最新版本
+            th 开发版本大小
+            th 压缩版本大小
+            th 浏览器支持情况
+        each val, index in frames
+          tr
+            td= val.name
+            td= val.version
+            td= val.size
+            td= val.minSize
+            td= val.browser
+      
+      div(class="panel panel-default")
+        div(class="panel-heading") 参考文章
+        div(class="panel-body")
+          p 读读文章，了解了解。
+          ul
+            each val, index in articles
+              li
+                a(href="#{val.url}", target="_blank")= val.name
+      

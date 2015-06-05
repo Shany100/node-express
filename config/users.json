@@ -1,0 +1,8 @@
+{
+	
+	note: 'users note test.'
+	users: [{
+		username: 'test',
+		password: 'test'
+	}]
+}

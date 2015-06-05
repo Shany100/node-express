@@ -1,11 +1,10 @@
 html
-  head
-    title!=msg
-    link(rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css")
-    link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+  include ./head/head.jade
   body
     include ./nav/nav.jade
     
+    div(class="container")
+      div(style={height: '200px'})
     div(class="container")
       div(class="row")
         div(class="col-md-3") 
@@ -14,7 +13,7 @@ html
               li
                a(href="#"+val.url)= val.name        
         div(class="col-md-9")
-          h1!=msg
+          h3!=msg
           include ./forms/todo.jade
           include ./modals/modal.html
     script(src="/bower_components/jquery/dist/jquery.min.js")

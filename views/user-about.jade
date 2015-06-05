@@ -1,0 +1,17 @@
+html
+  include ./head/head.jade
+  body
+    include ./nav/nav.jade
+    div(class="container")
+      div(class="panel panel-default")
+        div(class="panel-body") 不须放屁，试看天地翻覆！
+      div(class="panel panel-info")
+        div(class="panel-heading")用户基本信息
+        div(class="panel-body")= infoset
+        table(class="table table-bordered")
+          - var i = 0
+          each val, index in user
+            tr(class={active: i++%2 == 0})
+              td= index
+              td= val
+            

@@ -1,0 +1,11 @@
+html
+  include ./head/head.jade
+  body
+    div(class="container")
+      div(class="panel panel-default")
+        div(class="panel-body")无理取闹，必有所图！
+      include ./forms/login.jade
+    
+    script(src="/bower_components/vue/dist/vue.js")
+    script(src="/modules/ajax.js")
+    script(src="/js/login.js")

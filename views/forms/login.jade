@@ -1,0 +1,11 @@
+form(name="loginForm"  v-on="keyup: loginHandler | key enter")
+    div(class="form-group {{nameError? 'has-error':''}}")
+      label(for="usernameIpt") 用户名
+      input(id="usernameIpt", v-model="username", v-on="change: inputChange('username', 'nameError')", class="form-control", name="username", type="text", placeholder="输入用户名", autofocus)
+    div(class="form-group {{pswError? 'has-error':''}}")
+      label(for="passwordIpt") 密码
+      input(id="passwordIpt", v-model="password", v-on="change: inputChange('password', 'pswError')", class="form-control", name="title", type="password", placeholder="输入密码")
+    div(class="panel panel-default")
+      div(class="panel-body")
+                 登录信息： {{username}} / {{password}}
+    button(type="button", v-on="click: loginHandler" id="loginBtn" class="btn btn-primary") 登录

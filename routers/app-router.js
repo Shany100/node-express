@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session')
 var router = express.Router();
 var _ = require('lodash');
 
@@ -35,7 +36,12 @@ router.get("/index", function(req, res){
 })
 
 router.get("/about", function(req, res){
-	res.send("access success. /app/about")
+	var userInfo = req.session.user
+	var infoset = JSON.stringify(req.session.user)
+	
+	userInfo.password = "**********"
+	res.render("user-about", {user: userInfo, infoset: infoset})
+	//res.send("access success. /app/about")
 })
 
 module.exports = router;
