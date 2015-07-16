@@ -1,9 +1,9 @@
-div(class="container")  
+div(class="container")
     ul(class="nav navbar-nav")
-      each val, index in {"app":'首页', 'about':'关于APP', 'frames': "前端框架"}
-        li 
+      each val, index in {"app":'首页', 'about':'关于APP', 'frames': "前端框架", 'tool_articles': 'HTML5 工具'}
+        li
           a(href="/" + index)= val
-    
+
     ul(class="nav navbar-nav navbar-right")
       li
         a(href="/app/about")= appUserInfo?appUserInfo.username:"未登录"
