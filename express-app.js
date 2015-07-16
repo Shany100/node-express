@@ -18,9 +18,10 @@ app.use(session({
 
 // 不需要登录的路由
 var nomarlUrls = [
-	"/login", 
-	"/userLogin", 
-	"/frames"
+	"/login",
+	"/userLogin",
+	"/frames",
+	"/tool_articles"
 ];
 
 //登录拦截
@@ -75,6 +76,14 @@ app.use("/frames", function(req, res){
 		frames: frame.frames
 	});
 });
+
+app.use('/tool_articles', function(req, res){
+	var toolArticles = require('./models/tools.js')
+	res.render('tool-articles', {
+		msg: '工具文章集',
+		toolArticles: toolArticles.toolArticles
+	})
+})
 
 app.listen(3000);
 console.log("Server running at http://localhost:3000");

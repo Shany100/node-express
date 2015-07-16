@@ -1,0 +1,13 @@
+html
+  include ./head/head.jade
+  body
+    include ./nav/nav.jade
+    div(class="container")
+      div(class="panel panel-default")
+        div(class="panel-heading") 参考文章
+        div(class="panel-body")
+          p 读读文章，了解了解。
+          ul
+            each val, index in toolArticles
+              li
+                a(href="#{val.url}", target="_blank")= val.name
