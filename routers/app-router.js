@@ -10,27 +10,27 @@ router.use(function timeLog(req, res, next){
 
 router.get("/", function(req, res){
 	var navs = [{
-		name: "添加待办信息",
+		name: "待办信息",
 		title: "待办信息",
-		url: "/app/viewtodo"
+		url: "/viewtodolist"
 	},{
-		name: "添加招聘信息",
+		name: "招聘信息",
 		title: "招聘信息",
-		url: "/app/viewemploy"
+		url: "/viewemploy"
 	},{
-		name: "添加文章内容",
+		name: "博客文章",
 		title: "文章内容",
-		url: "/app/viewarticle"
+		url: "/viewarticle"
 	}];
-	
-	var data = _.assign({msg: "录信息表单"},{navs: navs});
-	
-	res.render("index", data);	
+
+	var data = _.assign({msg: "App 首页"},{navs: navs});
+
+	res.render("index", data);
 })
 
 router.get("/index", function(req, res){
 	console.log("app-router __dirname: " + __dirname)
-	
+
 	res.cookie("app-router", "APPROUTER_ACCESSS")
 	res.redirect("/");
 })
@@ -38,7 +38,7 @@ router.get("/index", function(req, res){
 router.get("/about", function(req, res){
 	var userInfo = req.session.user
 	var infoset = JSON.stringify(req.session.user)
-	
+
 	userInfo.password = "**********"
 	res.render("user-about", {user: userInfo, infoset: infoset})
 	//res.send("access success. /app/about")

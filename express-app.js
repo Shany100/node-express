@@ -21,7 +21,8 @@ var nomarlUrls = [
 	"/login",
 	"/userLogin",
 	"/frames",
-	"/tool_articles"
+	"/tool_articles",
+	"/app"
 ];
 
 //登录拦截
@@ -66,6 +67,7 @@ app.get("/about", function(req, res){
 });
 
 app.use("/app", appRouter)
+app.use("/load", require("./routers/view-router.js"))
 
 app.use("/frames", function(req, res){
 //	res.send("前端框架")
